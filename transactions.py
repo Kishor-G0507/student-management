@@ -60,4 +60,17 @@ class TransactionManager:
         book['available'] = True
         self.transactions.append({'book_id': book_id, 'action': 'returned'})
         print(f"Book ID {book_id} has been returned.")
+def return_book(self):
+        book_id = int(input("Enter book ID to return: "))
 
+        book = next((b for b in self.book_manager.books if b['id'] == book_id), None)
+        if not book:
+            print("Book not found.")
+            return
+        if book['available']:
+            print("Book is already returned.")
+            return
+
+        book['available'] = True
+        self.transactions.append({'book_id': book_id, 'action': 'returned'})
+        print(f"Book ID {book_id} has been returned.")
